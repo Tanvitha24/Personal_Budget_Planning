@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="stylesheet", href="../public/assests/css/style.css")
+
+  body
+    #header
+    
+    form#signupForm(onsubmit="return validateForm()")
+      fieldset#signup-fieldset
+        legend Register
+        
+        label(for="name") Name:
+        input(type="text" id="name" name="name")
+        
+        label(for="email") Email:
+        input(type="email" id="email" name="email")
+        
+        label(for="password") Password:
+        input(type="password" id="password" name="password")
+        
+        .buttons
+          button(type="submit") Submit
+          button(type="reset") Reset
+
+    #footer
+    
+    script(src="../public/assests/js/Script.js")

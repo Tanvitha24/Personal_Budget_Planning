@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./assests/css/style.css">
+</head>
+<body>
+  {{!-- <h1>USER DASH BOARD</h1> --}}
+  <div id="header">
+     <header>
+        <div class="logo"><img src="/assests/img/paging/Finman-Logo-1.png" alt="logo" width="100px" height="50px"></div>
+        <nav>
+            <a href="/user" class="button">Home</a>
+            <a href="/traceexpense" class="button">Trace Expense</a>
+            {{!-- <a href="/aboutus" class="button">About Us</a> --}}
+            {{!-- <a href="/services" class="button">Services</a> --}}
+            <a href="/userdashboard" class="button">DashBoard</a>
+            <a href="/login" class="menu button" id="menu">Logout</a>
+            {{!-- <div class="menu" id="menu">
+              
+                <li onclick="logout()">Logout</li>
+             
+            </div> --}}
+        </nav>
+    </header>
+
+
+
+
+  {{!-- <div class="con">
+        <h1>Welcome back, #{user.name}!</h1>
+        <img src="https://via.placeholder.com/80" alt="Profile Image" class="profile-image">
+
+        <!-- User Details in Cards -->
+        <div class="user-details">
+            <div class="card">
+                <h2>Name</h2>
+                <p></p>
+            </div>
+            <div class="card">
+                <h2>Email</h2>
+                <p></p>
+            </div>
+            <div class="card">
+                <h2>Income</h2>
+                <p></p>
+            </div>
+            <div class="card">
+                <h2>Age</h2>
+                <p></p>
+            </div>
+            <div class="card">
+                <h2>Phone Number</h2>
+                <p></p>
+            </div>
+            <div class="card">
+                <h2>Occupation</h2>
+                <p></p>
+            </div>
+        </div> --}}
+
+
+
+<div class="con">
+    <h1>Welcome back, {{user.name}}!</h1>
+    <img src="./assests/img/profile.png" width="1000px" height="11000px" alt="Profile Image" class="profile-image">
+
+    <!-- User Details in Cards -->
+    <div class="user-details">
+        <div class="card">
+            <h2 class="user_details">Name</h2>
+            <p>{{user.name}}</p>
+        </div>
+        <div class="card">
+            <h2 class="user_details">Email</h2>
+            <p>{{user.email}}</p>
+        </div>
+        <div class="card">
+            <h2 class="user_details">Income</h2>
+            <p>{{user.income}}</p>
+        </div>
+        <div class="card">
+            <h2 class="user_details">Age</h2>
+            <p>{{user.age}}</p>
+        </div>
+        <div class="card">
+            <h2 class="user_details">Phone Number</h2>
+            <p>{{user.phonenumber}}</p>
+        </div>
+        <div class="card">
+            <h2 class="user_details">Occupation</h2>
+            <p>{{user.occupation}}</p>
+        </div>
+        {{!-- <div class="card">
+            <h2 class="user_details">Seleted Plan</h2>
+            <p>Your current budget plan is: {{user.plan}}</p>
+
+        </div> --}}
+    </div>
+</div>
+
+
+
+
+        <!-- Budget Summary in a Card -->
+        <!-- Budget Summary Card -->
+
+
+<!-- Frequently Asked Questions Card -->
+<div class="card">
+    <h2 class="toggle-header">Budget Summary</h2>
+    <p class="toggle-content">The Personal Budget Planning project helps users manage their finances by allowing them to input their monthly income and expenses
+       to generate three customized budget plans: Least Savings, Default Savings, and Best Savings. Users can track and compare their actual
+        expenses with budgeted amounts and adjust savings for categories like housing, food, utilities, transportation, etc. The project
+         also includes features such as an error-handling page for displaying appropriate messages when errors occur (like 404).
+          The overall design uses a user-friendly interface with dynamic elements for ease of navigation and functionality.</p>
+</div>
+
+<div class="card">
+    <h2 class="toggle-header">Fixed Metrics</h2>
+    <p class="toggle-content">Your fixed metrics include essential categories such as Housing, Utilities, and Savings. You can adjust these categories for more personalized plans.</p>
+</div>
+
+<div class="card">
+    <h2 class="toggle-header">How to Plan Your Budget</h2>
+    <p class="toggle-content">Planning your budget is crucial for financial stability. Focus on setting a savings goal, tracking your expenses, and adjusting your discretionary spending based on income flow.</p>
+</div>
+
+<div class="card">
+    <h2 class="toggle-faq-header">Frequently Asked Questions</h2>
+    <div class="faq-section" style="display:none;">
+        <div class="faq-item">
+            <h3 class="toggle-question">How do I create a budget?</h3>
+            <p class="toggle-answer">You can create a budget by listing your income and expenses, setting priorities, and allocating funds to each category.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="toggle-question">What are fixed and variable expenses?</h3>
+            <p class="toggle-answer">Fixed expenses are consistent each month (e.g., rent), while variable expenses can change (e.g., groceries, entertainment).</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="toggle-question">How much should I save?</h3>
+            <p class="toggle-answer">A common recommendation is to save at least 20% of your income. However, the amount can vary based on your financial goals.</p>
+        </div>
+    </div>
+</div>
+
+
+
+    <div id="footer">
+     <footer class="footer">
+  <div class="container grid grid--footer">
+    <div class="logo-col">
+      <a href="#" class="footer-logo">
+        <img class="logo" alt="logo" src="./assests/img/paging/Finman-Logo-1.png" />
+        </a>
+        <ul class="social-links">
+          <li><a href="#" style="text-decoration: none"
+            ><i class="bx bxl-facebook"></i
+          ></a></li>
+          <li><a href="#" style="text-decoration: none"
+            ><i class="bx bxl-linkedin"></i
+          ></a></li>
+          <li><a href="#" style="text-decoration: none"
+            ><i class="bx bxl-twitter"></i
+          ></a></li>
+          <li>
+            <a href="#" style="text-decoration: none"
+            ><i class="bx bxl-instagram"></i
+          ></a>
+          </li>
+        </ul>
+        <p class="copy-right">Copyright &copy;<span class="year">2027</span> 
+           by Omnifood,Inc.All rights reserved.</p>
+    </div>
+    <div class="address-col">
+      <p class="footer-heading">Contant us</p>
+      <address class="contacts">
+        <p class="address">623 Harrison St., 2nd Floor, San Francisco, CA 94107</p>
+      <p>
+        <a class="footer-link" href="tel:415-201-6370">415-201-6370</a><br/>
+        <a class="footer-link" href="mailto:hello@website.com">info@website.com</a>
+      </p>
+      </address>
+    </div>
+    <nav class="nav-col">
+    <p class="footer-heading">Account</p>
+    <ul class="footer-nav">
+      <li><a class="footer-link" href="#">Create account</a></li>
+      <li><a class="footer-link" href="#">Sign in</a></li>
+      <li><a class="footer-link" href="#">ioS app</a></li>
+      <li><a class="footer-link" href="#">Android app</a></li>
+    </ul>
+    </nav>
+
+    <nav class="nav-col">
+      <p class="footer-heading">Company</p>
+      <ul class="footer-nav">
+        <li><a class="footer-link" href="#">Finman</a></li>
+        <li><a class="footer-link" href="#">For Business</a></li>
+        <li><a class="footer-link" href="#">Service</a></li>
+        <li><a class="footer-link" href="#">Finacial Sustainability</a></li>
+      </ul>
+      </nav>
+     
+      <nav class="nav-col">
+        <p class="footer-heading">Resources</p>
+        <ul class="footer-nav">
+          <li><a class="footer-link" href="#">Recipe directory</a></li>
+          <li><a class="footer-link" href="#">Help center</a></li>
+          <li><a class="footer-link" href="#">Privacy & terms</a></li>
+        </ul>
+        </nav>
+        
+  </div>
+</footer> 
+    {{!-- <script src="./assests/js/Script.js"></script> --}}
+    <script>
+    function logout() {
+        // Make a request to the server to handle logout
+        window.location.href = '/logout'; // Redirect to the server-side logout route
+    }
+
+
+    // Select all headers with the 'toggle-header' class
+// For general toggle content (Budget Summary, Fixed Metrics, etc.)
+document.querySelectorAll('.toggle-header').forEach(function(header) {
+    header.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        if (content.style.display === 'none' || content.style.display === '') {
+            content.style.display = 'block';
+        } else {
+            content.style.display = 'none';
+        }
+    });
+});
+
+// For FAQ double toggle (show only questions initially, then answers on click)
+const faqHeader = document.querySelector('.toggle-faq-header');
+const faqSection = document.querySelector('.faq-section');
+const faqQuestions = document.querySelectorAll('.toggle-question');
+
+// First toggle to show/hide FAQ questions
+faqHeader.addEventListener('click', function() {
+    if (faqSection.style.display === 'none' || faqSection.style.display === '') {
+        faqSection.style.display = 'block';
+    } else {
+        faqSection.style.display = 'none';
+    }
+});
+
+// Second toggle to show answers when a question is clicked
+faqQuestions.forEach(function(question) {
+    question.addEventListener('click', function() {
+        const answer = this.nextElementSibling;
+        if (answer.style.display === 'none' || answer.style.display === '') {
+            answer.style.display = 'block';
+        } else {
+            answer.style.display = 'none';
+        }
+    });
+});
+
+
+</script>
+
+</body>
+</html>

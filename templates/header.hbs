@@ -1,0 +1,21 @@
+<header>
+  <h1>Air Ticket Booking</h1>
+  <p>Book your tickets to any destination worldwide!</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/aboutus">About Us</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/contact">Contact</a></li>
+
+    {{#if userId}}
+      <li><a href="/user/dashboard">User Dashboard</a></li>
+      <li><a href="/user/logout">Log Out</a></li>
+    {{else}}
+      <li><a href="/register">Board with US</a></li>
+      <li><a href="/login">Fly with US</a></li>
+    {{/if}}
+  </ul>
+</nav>

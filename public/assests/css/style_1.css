@@ -1,0 +1,732 @@
+/* General Styles */
+
+/* 
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+} */
+
+:root {
+  --primary-color: #fcb71d;
+  --secondary-color: #d29b25;
+  --dark-blue: #0f2d53;
+  --medium-blue: #5e718b;
+  --light-gray: #dfe0de;
+}
+
+
+/* Slider Styles */
+.slider {
+  position: relative;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.slides {
+  display: none;
+}
+
+.slides img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.active {
+  display: block;
+}
+
+/* Content Styles */
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+  margin-bottom: 20px;
+}
+
+.icon-left,
+.icon-right {
+  font-size: 30px;
+  color: #333;
+}
+
+.text-content {
+  width: 70%;
+  text-align: left;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+/* Paragraph Styles */
+p {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+.input-section {
+  display: flex;
+  /* Use flexbox */
+  align-items: center;
+  /* Center items vertically */
+  justify-content: center;
+  /* Center items horizontally */
+  margin: 20px 0;
+  /* Add some margin for spacing */
+}
+
+.input-section label {
+  margin-right: 10px;
+  /* Space between label and input */
+}
+
+.input-section input {
+  margin-right: 10px;
+  /* Space between input and button */
+  width: 200px;
+  /* Set a fixed width for the input */
+  padding: 8px;
+  /* Add padding for better appearance */
+  border: 1px solid #ccc;
+  /* Add border */
+  border-radius: 5px;
+  /* Rounded corners */
+}
+
+.input-section button {
+  background-color: #d29b25;
+  /* Button background color */
+  color: white;
+  /* Button text color */
+  padding: 10px 15px;
+  /* Padding for button */
+  border: none;
+  /* Remove border */
+  border-radius: 5px;
+  /* Rounded corners */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+  transition: background-color 0.3s;
+  /* Transition for hover effect */
+  margin-left: 10px;
+  /* Add margin to the left of the button */
+}
+
+.input-section button:hover {
+  background-color: #f6c640;
+  /* Darker shade on hover */
+}
+
+.expenses-section {
+  margin-bottom: 20px;
+}
+
+.expense-item input {
+  padding: 10px;
+  width: 200px;
+  /* Adjusted width for better alignment */
+  margin: 10px 0;
+}
+
+.expense-item select {
+  padding: 10px;
+  width: 100px;
+  /* Fixed width for select elements */
+  margin-left: 10px;
+  /* Spacing between input and select */
+}
+
+/* Button Styles */
+.expenses-section button {
+  padding: 10px 20px;
+  background-color: #d29b25;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  /* Added rounded corners for buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.expenses-section button:hover {
+  background-color: #f3b94f;
+}
+
+/* Budget Plans */
+.plans-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.plan {
+  flex: 1;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.budget-plan {
+  margin-top: 10px;
+}
+
+.budget-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.budget-item span {
+  width: 50%;
+}
+
+h2 {
+  color: #d29b25;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+h1 {
+  color: #d29b25;
+}
+
+.expenses-section {
+  margin: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.expense-item {
+  display: flex;
+  /* Keep items in a row */
+  justify-content: space-between;
+  /* Space between label and inputs */
+  align-items: center;
+  /* Center align vertically */
+  margin-bottom: 15px;
+  /* Space between each expense item */
+  width: 100%;
+  /* Use full width for alignment */
+}
+
+.expense-item {
+  margin-bottom: 15px;
+  /* Space between items */
+}
+
+label {
+  font-weight: bold;
+  /* Make labels bold */
+  display: block;
+  /* Make labels block elements for proper spacing */
+  margin-bottom: 5px;
+  /* Space between label and input */
+}
+
+input[type="text"] {
+  width: 100%;
+  /* Full width input */
+  padding: 10px;
+  /* Padding for comfort */
+  border: 1px solid #ccc;
+  /* Subtle border */
+  border-radius: 4px;
+  /* Rounded corners */
+  box-sizing: border-box;
+  /* Include padding in total width */
+}
+
+input[type="text"]:focus {
+  border-color: #d29b25;
+  /* Change border color on focus */
+  outline: none;
+  /* Remove default outline */
+}
+
+@media (max-width: 600px) {
+  input[type="text"] {
+    padding: 8px;
+    /* Reduce padding on smaller screens */
+  }
+}
+
+/* Expense Item Inputs */
+.expense-item input {
+  width: 60%;
+  /* Input takes 60% of the available space */
+  padding: 10px;
+  /* Padding for better usability */
+  border: 1px solid #ccc;
+  /* Light border for visibility */
+  border-radius: 5px;
+  /* Rounded corners */
+  box-shadow: none;
+  /* Ensure no box shadow */
+}
+
+/* Expense Item Select */
+.expense-item select {
+  width: 30%;
+  /* Fixed width for select elements */
+  padding: 10px;
+  /* Padding for consistency */
+  border: 1px solid #ccc;
+  /* Light border for visibility */
+  border-radius: 5px;
+  /* Rounded corners */
+  margin-left: 10px;
+  /* Space between input and select */
+}
+
+/* Responsive Adjustments for Expense Item */
+@media (max-width: 768px) {
+  .expense-item {
+    flex-direction: column;
+    /* Stack items vertically on smaller screens */
+    align-items: flex-start;
+    /* Align to the left */
+    width: 100%;
+    /* Full width for better alignment */
+  }
+
+  .expense-item input,
+  .expense-item select {
+    width: 100%;
+    /* Full width for inputs/selects */
+    margin-bottom: 10px;
+    /* Space between stacked elements */
+    margin-left: 0;
+    /* Remove left margin for stacked items */
+  }
+}
+
+/* Result Section */
+#expenses-result {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  /* Give a background to results for visibility */
+  border-radius: 5px;
+  /* Round corners for the results */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  /* Add some shadow for depth */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .expense-item {
+    flex-direction: column;
+    /* Stack inputs vertically for better usability */
+    align-items: flex-start;
+    /* Align items to the start */
+    width: 100%;
+    /* Full width for alignment */
+  }
+
+  .expense-item input,
+  .expense-item select {
+    width: 100%;
+    /* Full width for inputs and selects on smaller screens */
+    margin-bottom: 10px;
+    /* Add spacing between input fields */
+  }
+
+  .expense-item select {
+    margin-left: 0;
+    /* Remove left margin */
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-content {
+    width: 100%;
+  }
+
+  .plans-container {
+    flex-direction: column;
+    /* Stack plans vertically on smaller screens */
+  }
+
+  .plan {
+    margin-bottom: 20px;
+    /* Add space between stacked plans */
+  }
+
+  .expense-item {
+    flex-direction: column;
+    /* Stack inputs vertically for better usability */
+    align-items: flex-start;
+    /* Align items to the start */
+  }
+
+  .expense-item input {
+    width: 100%;
+    /* Full width for inputs on smaller screens */
+    margin-bottom: 10px;
+    /* Add spacing between input fields */
+  }
+
+  .input-section input {
+    width: 100%;
+    /* Full width for income input */
+  }
+
+  .expense-item select {
+    width: 100%;
+    /* Full width for select on smaller screens */
+    margin-left: 0;
+    /* Remove left margin */
+  }
+}
+
+/* Ensure all expense items stay in one row on larger screens */
+@media (min-width: 769px) {
+  .expense-item {
+    flex-direction: row;
+    /* Keep inputs and select in a row on larger screens */
+  }
+
+  .expense-item input,
+  .expense-item select {
+    margin-left: 10px;
+    /* Add margin to the left of select input for spacing */
+  }
+}
+
+/* Generate Plan Link Styles */
+.generate-plan-link {
+  text-align: center;
+  /* Center the link */
+  margin: 0;
+  /* Remove any default margin */
+  padding: 10px 0;
+  /* Add vertical padding for better clickability */
+}
+
+/* Link Styles */
+.generate-plan-link a {
+  text-decoration: none;
+  /* Remove underline from link */
+  background-color: #d29b25;
+  /* Set background color */
+  color: #fff;
+  /* Set text color */
+  padding: 10px 20px;
+  /* Set padding for the link */
+  border-radius: 20px;
+  /* Round the corners */
+  display: inline-block;
+  /* Make the link an inline-block for padding to work */
+}
+
+
+
+#chartContainer {
+  display: none;
+  /* Hide the chart container initially */
+  max-width: 950px;
+  /* Set a maximum width */
+  width: 100%;
+  /* Allows it to shrink with smaller screens */
+  height: 500px;
+  /* Set a fixed height */
+  margin: auto;
+  /* Center the container */
+  padding: 50px;
+  /* Add some padding if needed */
+  border: 1px solid #ccc;
+  /* Optional: Add a border for visibility */
+}
+
+.generate-plan-section h2 {
+  text-align: center;
+  /* Center align the text */
+  margin-top: 90px;
+  /* Adjust this value to move the text down */
+}
+
+.generate-plan-link a:hover {
+  background-color: #f3b94f;
+}
+
+.generate-plan-section p {
+  text-align: center;
+  /* Center align the text */
+}
+
+.selected-plan {
+  border: 2px solid #d29b25;
+  box-shadow: 0px 0px 20px rgba(230, 155, 57, 0.652);
+  background-color: #fbf8eb;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Additional Savings Section */
+#additional-savings {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#additional-savings p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+#additional-savings button {
+  background-color: #d29b25;
+  /* Button background color */
+  color: white;
+  /* Button text color */
+  padding: 10px 20px;
+  /* Padding for button */
+  border: none;
+  /* Remove border */
+  border-radius: 5px;
+  /* Rounded corners */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+  margin: 0 10px;
+  /* Add spacing between buttons */
+  transition: background-color 0.3s ease;
+}
+
+#additional-savings button:hover {
+  background-color: #edbb33;
+  /* Darker shade on hover */
+}
+
+/* Category Selection Section */
+#category-selection {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f4f4f9;
+  /* Light background */
+  border-radius: 10px;
+  /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+}
+
+#category-selection label {
+  font-weight: bold;
+  display: block;
+  /* Block level to position label above select */
+  margin-bottom: 10px;
+}
+
+#category-selection select {
+  width: 60%;
+  /* Set width for select */
+  padding: 10px;
+  /* Padding for better usability */
+  border: 1px solid #ccc;
+  /* Border for visibility */
+  border-radius: 5px;
+  /* Rounded corners */
+  margin-bottom: 20px;
+  /* Space below select */
+}
+
+#category-selection button {
+  background-color: #d29b25;
+  /* Green background for 'Update Plans' */
+  color: white;
+  /* Button text color */
+  padding: 10px 20px;
+  /* Padding for button */
+  border: none;
+  /* Remove border */
+  border-radius: 5px;
+  /* Rounded corners */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+  transition: background-color 0.3s ease;
+}
+
+#category-selection button:hover {
+  background-color: #f6c640;
+  /* Darker shade of green on hover */
+}
+
+/* Amount Input */
+#amount-input input {
+  width: 60%;
+  /* Adjust width */
+  padding: 10px;
+  /* Padding for better usability */
+  border: 1px solid #ccc;
+  /* Border for visibility */
+  border-radius: 5px;
+  /* Rounded corners */
+  margin-top: 10px;
+  /* Spacing above input */
+}
+
+/* header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #333; */
+  padding: 5px;
+
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav a {
+  margin-left: 20px;
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  /* Transition for transform and background color */
+  display: inline-block;
+  /* Ensures the scale effect works properly */
+  border-radius: 8px;
+  /* Adjust the value for more or less curvature */
+}
+
+nav a:hover {
+  background-color: #edbb33;
+  /* Light gray for a softer background */
+  color: #fff;
+  /* Change text color to a dark blue */
+  transform: scale(1.1);
+  /* Slightly zoom in on hover */
+}
+
+
+
+
+/****************************/
+/* FOOTER SECTION */
+/****************************/
+/* Footer Styling */
+footer {
+  color: #333;
+  padding: 50px 20px;
+
+}
+
+.footer .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  align-items: start;
+  background-color: rgba(229, 240, 127, 0.13);
+}
+
+.footer-heading {
+  color: rgba(71, 77, 26, 0.933);
+  ;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer-logo img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  list-style: none;
+}
+
+.social-links a :hover {
+  padding: 5px;
+  border-radius: 50%;
+  transform: scale(0.9) translateY(-10px);
+  border: 2px solid #eeeeee;
+}
+
+.social-icon {
+  font-size: 24px;
+  /* color: #FF6700; */
+  /* Orange color for icons */
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  /* color: #00ADEF; */
+  /* Light blue on hover */
+}
+
+.copy-right {
+  text-decoration: none;
+  font-size: 0.875rem;
+  /* color: #CCCCCC; */
+  margin-top: 10px;
+}
+
+.address {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.contacts a {
+  text-decoration: none;
+  /* color: #FF6700; */
+  /* Orange links */
+  transition: color 0.3s;
+}
+
+.contacts a:hover {
+  /* color: #00ADEF; */
+  /* Light blue hover effect */
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav li {
+  margin-bottom: 10px;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  /* color: #00ADEF; */
+  /* Light blue on hover */
+}
+
+.footer .nav-col,
+.footer .address-col {
+  margin-bottom: 20px;
+}

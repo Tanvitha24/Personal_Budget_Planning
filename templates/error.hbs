@@ -1,0 +1,27 @@
+<!-- /templates/error.hbs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error - Personal Budget Planner</title>
+    <link rel="stylesheet" href="./assests/css/style.css">
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <!-- Error Message within a Card -->
+        <div class="card-error error-card">
+            <h2>Error {{statusCode}}</h2>
+            <h2><i class='bx bxs-error'></i></h2>
+            <p>{{message}}</p>
+            <a href="/login" class="btn-error">Go back to Login</a>
+        </div>
+    </main>
+    <div id="footer"></div>
+  <script src="./assests/js/Script.js"></script>
+</body>
+</html>

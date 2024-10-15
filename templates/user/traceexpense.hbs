@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./assests/css/style_1.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  {{!-- <h1>Trace Expense</h1> --}}
+  <div id="header">
+     <header>
+        <div class="logo"><img src="/assests/img/paging/Finman-Logo-1.png" alt="logo" width="100px" height="50px"></div>
+        <nav>
+            <a href="/user" class="button">Home</a>
+            <a href="/traceexpense" class="button">Trace Expense</a>
+            {{!-- <a href="/aboutus" class="button">About Us</a> --}}
+            {{!-- <a href="/services" class="button">Services</a> --}}
+            <a href="/userdashboard" class="button">DashBoard</a>
+            <a href="/login" class="menu button" id="menu">Logout</a>
+            {{!-- <div class="menu" id="menu">
+              
+                <li onclick="logout()">Logout</li>
+             
+            </div> --}}
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <h1>Budget Planning System</h1>
+
+        <!-- Image Slider -->
+        <div class="slider">
+            <div class="slides active">
+                <img src="https://i2.wp.com/clubthrifty.com/wp-content/uploads/2015/10/Budgeting-For-People-Who-Hate-Budgets_Featured-Image.jpg" alt="Budget Plan 1">
+            </div>
+            <div class="slides">
+                <img src="https://images.squarespace-cdn.com/content/v1/5951cc071b10e3977f15d46a/0df0f57a-5675-4ed8-82e1-0211241e1404/planning-for-a-budgeting-cycle-in-a-down-economy.jpg" alt="Budget Plan 2">
+            </div>
+            <div class="slides">
+                <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnVkZ2V0fGVufDB8fDB8fHww" alt="Budget Plan 3">
+            </div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <!-- Left Icon -->
+            <i class="fas fa-chart-line icon-left"></i>
+
+            <!-- Text Content -->
+            <div class="text-content">
+                <h2>Choose the Perfect Budget Plan</h2>
+                <p>Our budget planning system provides three distinct options for managing your finances: the Best Savings Plan, the Least Savings Plan, and the Exact Savings Plan. Customize your budget based on your income and expenses and track your spending effortlessly with our interactive tools and visualizations.</p>
+            </div>
+
+            <!-- Right Icon -->
+            <i class="fas fa-piggy-bank icon-right"></i>
+        </div>
+    </div>
+
+    <!-- Generate Plan Link - Moved Up -->
+    <div class="generate-plan-link">
+        <a href="#generate-plan">Generate Plan</a>
+    </div>
+
+    <!-- Generate Plan Section -->
+    <div id="generate-plan" class="generate-plan-section">
+        <h2>Generate Your Budget Plan</h2>
+        <p>Here you can input your income and expenses to generate a customized budget plan.</p>
+        
+        <div class="input-section">
+            <label for="income">Enter your Monthly Income:</label>
+            <input type="number" id="income" placeholder="Enter your income">
+            <button onclick="generateBudget()">Generate Budget</button>
+        </div>
+
+        <!-- Display three budget plans side by side -->
+        <div class="plans-container">
+            <div class="plan" id="least-savings-plan">
+                <h2>Least Savings</h2>
+                <div class="budget-plan"></div>
+            </div>
+            <div class="plan" id="default-savings-plan">
+                <h2>Default Savings</h2>
+                <div class="budget-plan"></div>
+            </div>
+            <div class="plan" id="best-savings-plan">
+                <h2>Best Savings</h2>
+                <div class="budget-plan"></div>
+            </div>
+        </div>
+
+        <!-- After expense comparison -->
+<div id="additional-savings">
+    <p>Would you like to add more savings for any category?</p>
+    <button onclick="askCategory()">Yes</button>
+    <button onclick="skipCategory()">No</button>
+</div>
+
+<!-- Dropdown for category selection -->
+<!-- Dropdown for category selection -->
+<div id="category-selection" style="display:none;">
+    <label for="category">Select a category to add more savings:</label>
+    <select id="category" onchange="showAmountInput()">
+        <option value="" disabled selected>Select a category</option>
+        <option value="housing">Housing</option>
+        <option value="food">Food</option>
+        <option value="utilities">Utilities</option>
+        <option value="savings">Savings</option>
+        <option value="medical">Medical</option>
+        <option value="transportation">Transportation</option>
+        <option value="entertainment">Entertainment</option>
+        <option value="education">Education</option>
+        <option value="health">Health</option>
+        <option value="clothing">Clothing</option>
+    </select>
+
+    <!-- Input field for entering the amount -->
+    <div id="amount-input" style="display:none; margin-top: 20px;">
+        <label for="amount">Enter the amount you want to save:</label>
+        <input type="number" id="amount" placeholder="Enter amount" min="0" />
+    </div>
+
+    <button id="update-button" onclick="updatePlans()" style="display:none; margin-top: 20px;">Update Plans</button>
+</div>
+
+
+
+
+        <!-- Section to input actual expenses -->
+        <div class="expenses-section">
+            <h2>Enter Your Actual Expenses</h2>
+            <div class="expense-item">
+                <label for="housing-expense">Housing: </label>
+                <input type="number" id="housing-expense" placeholder="Enter housing expenses">
+                <select id="housing-timeframe">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <div class="expense-item">
+                <label for="food-expense">Food: </label>
+                <input type="number" id="food-expense" placeholder="Enter food expenses">
+                <select id="food-timeframe">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <div class="expense-item">
+                <label for="utilities-expense">Utilities: </label>
+                <input type="number" id="utilities-expense" placeholder="Enter utility expenses">
+                <select id="utilities-timeframe">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <div class="expense-item">
+                <label for="transportation-expense">Transportation: </label>
+                <input type="number" id="transportation-expense" placeholder="Enter transportation expenses">
+                <select id="transportation-timeframe">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <div class="expense-item">
+                <label for="entertainment-expense">Entertainment: </label>
+                <input type="number" id="entertainment-expense" placeholder="Enter entertainment expenses">
+                {{!-- <label for="entertainment-timeframe">Select Timeframe:</label> --}}
+                <select id="entertainment-timeframe">
+                    <option value="" disabled selected>Select a timeframe</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+
+            </div>
+            <div class="expense-item">
+                <label for="education-expense">Education: </label>
+                <input type="number" id="education-expense" placeholder="Enter education expenses">
+                <select id="education-timeframe">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <div class="expense-item">
+                <label for="health-expense">Health: </label>
+                <input type="number" id="health-expense" placeholder="Enter health expenses">
+                <select id="health-timeframe">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <div class="expense-item">
+                <label for="clothing-expense">Clothing: </label>
+                <input type="number" id="clothing-expense" placeholder="Enter clothing expenses">
+                <select id="clothing-timeframe">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <div class="expense-item">
+                <label for="savings-expense">Savings: </label>
+                <input type="number" id="savings-expense" placeholder="Enter savings amount">
+                <select id="savings-timeframe">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <button onclick="calculateExpenses()">Compare Expenses</button>
+
+            <!-- Section to display the comparison results -->
+            <div id="expenses-result"></div>
+            <div id="chartContainer">
+                <canvas id="budgetChart" style="margin-top: 20px; width: 180px; height: 150px;"></canvas>
+            </div>
+            
+
+        </div>
+    </div>
+
+    </div>
+    <div id="footer">
+     <footer class="footer">
+  <div class="container grid grid--footer">
+    <div class="logo-col">
+      <a href="#" class="footer-logo">
+        <img class="logo" alt="logo" src="./assests/img/paging/Finman-Logo-1.png" />
+        </a>
+        <ul class="social-links">
+          <li><a href="#" style="text-decoration: none"
+            ><i class="bx bxl-facebook"></i
+          ></a></li>
+          <li><a href="#" style="text-decoration: none"
+            ><i class="bx bxl-linkedin"></i
+          ></a></li>
+          <li><a href="#" style="text-decoration: none"
+            ><i class="bx bxl-twitter"></i
+          ></a></li>
+          <li>
+            <a href="#" style="text-decoration: none"
+            ><i class="bx bxl-instagram"></i
+          ></a>
+          </li>
+        </ul>
+        <p class="copy-right">Copyright &copy;<span class="year">2027</span> 
+           by Omnifood,Inc.All rights reserved.</p>
+    </div>
+    <div class="address-col">
+      <p class="footer-heading">Contant us</p>
+      <address class="contacts">
+        <p class="address">623 Harrison St., 2nd Floor, San Francisco, CA 94107</p>
+      <p>
+        <a class="footer-link" href="tel:415-201-6370">415-201-6370</a><br/>
+        <a class="footer-link" href="mailto:hello@website.com">info@website.com</a>
+      </p>
+      </address>
+    </div>
+    <nav class="nav-col">
+    <p class="footer-heading">Account</p>
+    <ul class="footer-nav">
+      <li><a class="footer-link" href="#">Create account</a></li>
+      <li><a class="footer-link" href="#">Sign in</a></li>
+      <li><a class="footer-link" href="#">ioS app</a></li>
+      <li><a class="footer-link" href="#">Android app</a></li>
+    </ul>
+    </nav>
+
+    <nav class="nav-col">
+      <p class="footer-heading">Company</p>
+      <ul class="footer-nav">
+        <li><a class="footer-link" href="#">Finman</a></li>
+        <li><a class="footer-link" href="#">For Business</a></li>
+        <li><a class="footer-link" href="#">Service</a></li>
+        <li><a class="footer-link" href="#">Finacial Sustainability</a></li>
+      </ul>
+      </nav>
+     
+      <nav class="nav-col">
+        <p class="footer-heading">Resources</p>
+        <ul class="footer-nav">
+          <li><a class="footer-link" href="#">Recipe directory</a></li>
+          <li><a class="footer-link" href="#">Help center</a></li>
+          <li><a class="footer-link" href="#">Privacy & terms</a></li>
+        </ul>
+        </nav>
+        
+  </div>
+</footer> 
+    <script src="./assests/js/trace_script.js"></script>
+    <script>
+    function logout() {
+        // Make a request to the server to handle logout
+        window.location.href = '/logout'; // Redirect to the server-side logout route
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Plan Generator with Expenses</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Budget Plan Generator</h1>
+        
+        <div class="input-section">
+            <label for="income">Enter your Monthly Income:</label>
+            <input type="number" id="income" placeholder="Enter your income">
+            <button onclick="generateBudget()">Generate Budget</button>
+        </div>
+
+        <!-- Display three budget plans side by side -->
+        <div class="plans-container">
+            <div class="plan" id="least-savings-plan">
+                <h2>Least Savings</h2>
+                <div class="budget-plan"></div>
+            </div>
+            <div class="plan" id="default-savings-plan">
+                <h2>Default Savings</h2>
+                <div class="budget-plan"></div>
+            </div>
+            <div class="plan" id="best-savings-plan">
+                <h2>Best Savings</h2>
+                <div class="budget-plan"></div>
+            </div>
+        </div>
+
+        <!-- Section to input actual expenses -->
+        <div class="expenses-section">
+            <h2>Enter Your Actual Expenses</h2>
+            <div class="expense-item">
+                <label for="housing-expense">Housing: </label>
+                <input type="number" id="housing-expense" placeholder="Enter housing expenses">
+                <select id="housing-timeframe">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <div class="expense-item">
+                <label for="food-expense">Food: </label>
+                <input type="number" id="food-expense" placeholder="Enter food expenses">
+                <select id="food-timeframe">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <div class="expense-item">
+                <label for="utilities-expense">Utilities: </label>
+                <input type="number" id="utilities-expense" placeholder="Enter utility expenses">
+                <select id="utilities-timeframe">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <div class="expense-item">
+                <label for="transportation-expense">Transportation: </label>
+                <input type="number" id="transportation-expense" placeholder="Enter transportation expenses">
+                <select id="transportation-timeframe">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <div class="expense-item">
+                <label for="entertainment-expense">Entertainment: </label>
+                <input type="number" id="entertainment-expense" placeholder="Enter entertainment expenses">
+                <select id="entertainment-timeframe">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <div class="expense-item">
+                <label for="education-expense">Education: </label>
+                <input type="number" id="education-expense" placeholder="Enter education expenses">
+                <select id="education-timeframe">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <div class="expense-item">
+                <label for="health-expense">Health: </label>
+                <input type="number" id="health-expense" placeholder="Enter health expenses">
+                <select id="health-timeframe">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <div class="expense-item">
+                <label for="clothing-expense">Clothing: </label>
+                <input type="number" id="clothing-expense" placeholder="Enter clothing expenses">
+                <select id="clothing-timeframe">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <div class="expense-item">
+                <label for="savings-expense">Savings: </label>
+                <input type="number" id="savings-expense" placeholder="Enter savings amount">
+                <select id="savings-timeframe">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            <button onclick="calculateExpenses()">Compare Expenses</button>
+
+            <!-- Section to display the comparison results -->
+            <div id="expenses-result"></div>
+            <canvas id="budgetChart" style="margin-top: 20px;"></canvas>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

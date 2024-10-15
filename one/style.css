@@ -1,0 +1,174 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.input-section,
+.expenses-section {
+  margin-bottom: 20px;
+}
+
+.input-section input,
+.expense-item input {
+  padding: 10px;
+  width: 200px;
+  /* Adjusted width for better alignment */
+  margin: 10px 0;
+}
+
+.expense-item select {
+  padding: 10px;
+  width: 100px;
+  /* Fixed width for select elements */
+  margin-left: 10px;
+  /* Spacing between input and select */
+}
+
+.input-section button,
+.expenses-section button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  /* Added rounded corners for buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-section button:hover,
+.expenses-section button:hover {
+  background-color: #0056b3;
+}
+
+.plans-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.plan {
+  flex: 1;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.budget-plan {
+  margin-top: 10px;
+}
+
+.budget-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.budget-item span {
+  width: 50%;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.expenses-section {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.expense-item {
+  display: flex;
+  /* Make expense items flexible */
+  justify-content: space-between;
+  /* Align label and input */
+  align-items: center;
+  /* Center align the items vertically */
+  margin-bottom: 15px;
+}
+
+.expense-item input {
+  width: 60%;
+  /* Adjust the width of the input to take 60% of the container */
+}
+
+#expenses-result {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  /* Give a background to results for visibility */
+  border-radius: 5px;
+  /* Round corners for the results */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  /* Add some shadow for depth */
+}
+
+/* Responsive adjustments for expenses */
+@media (max-width: 768px) {
+  .plans-container {
+    flex-direction: column;
+    /* Stack plans vertically on smaller screens */
+  }
+
+  .plan {
+    margin-bottom: 20px;
+    /* Add space between stacked plans */
+  }
+
+  .expense-item {
+    flex-direction: column;
+    /* Stack inputs vertically for better usability */
+    align-items: flex-start;
+    /* Align items to the start */
+  }
+
+  .expense-item input {
+    width: 100%;
+    /* Full width for inputs on smaller screens */
+    margin-bottom: 10px;
+    /* Add spacing between input fields */
+  }
+
+  .input-section input {
+    width: 100%;
+    /* Full width for income input */
+  }
+
+  .expense-item select {
+    width: 100%;
+    /* Full width for select on smaller screens */
+    margin-left: 0;
+    /* Remove left margin */
+  }
+}
+
+/* Ensure all expense items stay in one row on larger screens */
+@media (min-width: 769px) {
+  .expense-item {
+    flex-direction: row;
+    /* Keep inputs and select in a row on larger screens */
+  }
+
+  .expense-item input,
+  .expense-item select {
+    margin-left: 10px;
+    /* Add margin to the left of select input for spacing */
+  }
+}
